@@ -1,0 +1,297 @@
+/* Definição de Variáveis de Cores */
+:root {
+    --primary-blue: #3498db;
+    --light-gray: #ecf0f1;
+    --medium-gray: #7f8c8d;
+    --dark-gray: #2c3e50;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos básicos */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+header {
+    background-color: var(--dark-gray);
+    padding: 10px 0;
+    position: relative; /* Para o menu ser posicionado corretamente */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-blue);
+}
+
+/* Menu Toggle */
+.menu-toggle {
+    display: none; /* Esconder o ícone de menu por padrão */
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px; /* Para dar espaço entre o menu e o toggle */
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: var(--white);
+    margin: 4px 0;
+}
+
+/* Seção Principal com layout dividido */
+#home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    padding: 20px;
+}
+
+#home .content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#home .text {
+    flex: 1;
+    padding: 20px;
+    color: var(--dark-gray);
+}
+
+#home .text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#home .text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--medium-gray);
+}
+
+#home .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .image img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo da seção Sobre Mim */
+#about {
+    background-color: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#about h2 {
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+}
+
+/* Projetos com bordas arredondadas */
+#projects {
+    background-color: var(--light-gray);
+    padding: 20px;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project {
+    flex: 0 1 calc(30% - 20px);
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Estilos para a seção de contato */
+#contact {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+form {
+    display: inline-block;
+    max-width: 400px;
+    width: 100%;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para o botão do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-button img {
+    width: 50px;
+    height: auto;
+}
+
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Botões */
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary {
+    background-color: #269dff;
+    color: white;
+}
+
+.btn-secondary {
+    border: 2px solid #269dff;
+    color: #269dff;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* Esconder o menu por padrão */
+        flex-direction: column; /* Coluna em dispositivos móveis */
+        position: absolute; /* Para que o menu apareça sobre o conteúdo */
+        background-color: var(--dark-gray);
+        width: 100%;
+        left: 0;
+        top: 60px; /* Para posicionar abaixo do header */
+        z-index: 1000;
+    }
+
+    header nav ul.active {
+        display: flex; /* Mostrar menu quando ativo */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostrar o ícone de menu */
+    }
+
+    #home .content {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        gap: 20px; /* Diminui o espaço entre elementos */
+    }
+
+    #home .text h1 {
+        font-size: 2rem; /* Reduz o tamanho da fonte */
+    }
+
+    #home .text p {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+    }
+
+    .project {
+        flex: 0 1 calc(100% - 20px); /* Projetos ocupam 100% em telas menores */
+        margin: 10px 0; /* Margem vertical em vez de horizontal */
+    }
+
+    input, textarea {
+        font-size: 1rem; /* Aumenta a legibilidade dos campos */
+    }
+
+    button {
+        font-size: 1rem; /* Aumenta a legibilidade dos botões */
+    }
+}
+
+@media (max-width: 480px) {
+    #about p, #projects p {
+        font-size: 1rem; /* Reduz o tamanho da fonte dos parágrafos */
+    }
+}

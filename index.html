@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Menu de navegação -->
+    <header>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre Mim</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+        <script>
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuList = document.querySelector('header nav ul');
+        
+            mobileMenu.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+        </script>
+    </header>
+
+    <!-- Seção Principal (Home) -->
+    <section id="home">
+        <div class="content">
+            <div class="text">
+                <h1 class="animate-text">Bem-vindo ao meu Portfólio!</h1>
+                <p>Desenvolvedor Web apaixonado por tecnologia e interfaces incríveis.</p>
+                <p>Entre em contato comigo clicando no botão do Whatsapp ou deixe seu contato na aba de Contato</p>
+                <div class="buttons">
+                    <a href="#projects" class="btn btn-primary">Meus Projetos</a>
+                    <a href="#contact" class="btn btn-secondary">Contato</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="/imgs/minha-foto.jpg" alt="Minha imagem de fundo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre Mim -->
+    <section id="about">
+        <h2>Sobre Mim</h2>
+        <p>Desenvolvedor com foco em HTML, CSS, JavaScript, Java e Angular, criando interfaces dinâmicas e responsivas.</p> 
+        <p>Apaixonado por tecnologia e inovação, estou dedicando minha jornada acadêmica em Análise e Desenvolvimento de Sistemas para criar aplicações que impactem positivamente a vida das pessoas.</p>
+        <p>Estou desenvolvendo pequenos projetos pessoais em minhas horas vagas em busca de mais conhecimento</p>
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section id="projects">
+        <h2>Meus Projetos</h2>
+        <div class="project-container">
+            <div class="project">
+                <img src="/imgs/Captura de tela 2024-10-10 115000.png" alt="Projeto 1">
+                <h3><a href="https://devmartinstiago.github.io/ProjetoBarbeariaOFC/"> Projeto Barbearia</a></h3>
+                <p>Esse foi meu primeiro contato com HTML, CSS e JS. Fiz esse site afim de ajudar um amigo que queria utilizar um site para seus clientes entrarem em contato.</p>
+                <p>Eu também aprendi sobre versionamento, hospedagem e API's nesse projeto, após esse pequeno passo eu pude compreender bem melhor alguns conceitos da programação sem utilizar nenhum framework</p>
+            </div>
+            <div class="project">
+                <img src="/imgs/trailhead.png" alt="Projeto 2">
+                <h3><a href="https://www.salesforce.com/trailblazer/tiagomartinss"> SuperBadge Apex</a></h3>
+                <p>Em um empresa especializada em soluções para Salesforce tive a oportunidade de atuar em projetos e estudar na propria plataforma, sendo assim, eu conclui minha primeira SuperBadge e refatorei a mesma (Salesforce não permite a divulgação do código)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contact">
+        <h2>Contato</h2>
+        <form id="contact-form">
+            <input type="text" name="emailjs_name" id="emailjs_name" placeholder="Seu nome" required>
+            <input type="email" name="emailjs_email" id="emailjs_email" placeholder="Seu e-mail" required>
+            <textarea name="emailjs_message" id="emailjs_message" placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="status-message"></p> <!-- Adicionei aqui -->
+    </section>
+
+    <!-- Botão de WhatsApp -->
+    <a href="https://wa.me/5519997711979" class="whatsapp-button" target="_blank">
+        <img src="/imgs/icons8-whatsapp-128.png" alt="WhatsApp">
+    </a>
+  
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 - Tiago Martins da Silva. Todos os direitos reservados.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
