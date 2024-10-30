@@ -7,12 +7,25 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     // Enviar o formulário via EmailJS
     emailjs.sendForm('service_8dmkm0e', 'template_fb7r2xe', this)
         .then(() => {
-            document.getElementById('status-message').textContent = 'Mensagem enviada com sucesso!';
+            // Mostrar mensagem de sucesso com SweetAlert
+            swal("Sucesso!", "Mensagem enviada com sucesso!", "success");
         }, (error) => {
-            document.getElementById('status-message').textContent = 'Erro ao enviar mensagem.';
+            // Mostrar mensagem de erro com SweetAlert
+            swal("Erro!", "Erro ao enviar mensagem.", "error");
             console.error('Erro:', error);
         });
 
     // Limpar o formulário após o envio
     this.reset();
 });
+
+
+const mobileMenu = document.getElementById('mobile-menu');
+            const menuList = document.querySelector('header nav ul');
+        
+            mobileMenu.addEventListener('click', () => {
+                menuList.classList.toggle('active');
+            });
+
+
+            
