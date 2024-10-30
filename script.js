@@ -1,4 +1,4 @@
-// Inicialize o EmailJS com seu User ID (encontrado no painel do EmailJS)
+// Inicialize o EmailJS com seu User ID
 emailjs.init('11Gq2yIIGqdmjovsa'); // Substitua pelo seu User ID
 
 document.getElementById('contact-form').addEventListener('submit', function (e) {
@@ -8,10 +8,18 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     emailjs.sendForm('service_8dmkm0e', 'template_fb7r2xe', this)
         .then(() => {
             // Mostrar mensagem de sucesso com SweetAlert
-            swal("Sucesso!", "Mensagem enviada com sucesso!", "success");
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso!',
+                text: 'Mensagem enviada com sucesso!',
+            });
         }, (error) => {
             // Mostrar mensagem de erro com SweetAlert
-            swal("Erro!", "Erro ao enviar mensagem.", "error");
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro!',
+                text: 'Erro ao enviar mensagem.',
+            });
             console.error('Erro:', error);
         });
 
@@ -19,13 +27,10 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     this.reset();
 });
 
-
+// Menu responsivo
 const mobileMenu = document.getElementById('mobile-menu');
-            const menuList = document.querySelector('header nav ul');
-        
-            mobileMenu.addEventListener('click', () => {
-                menuList.classList.toggle('active');
-            });
+const menuList = document.querySelector('header nav ul');
 
-
-            
+mobileMenu.addEventListener('click', () => {
+    menuList.classList.toggle('active');
+});
