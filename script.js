@@ -34,3 +34,25 @@ const menuList = document.querySelector('header nav ul');
 mobileMenu.addEventListener('click', () => {
     menuList.classList.toggle('active');
 });
+
+
+const slides = document.querySelectorAll('.slide');
+let slideIndex = 0;
+
+function showSlides() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slideIndex += 2; // Incrementa de 2 em 2 para mostrar 2 slides por vez
+  if (slideIndex >= slides.length) {
+    slideIndex = 0;
+  }
+
+  slides[slideIndex].style.display = "block";
+  slides[slideIndex + 1].style.display = "block";
+
+  setTimeout(showSlides, 2000); // Muda a cada 2 segundos
+}
+
+showSlides();

@@ -331,6 +331,27 @@ footer {
     }
 }
 
+.slider {
+    overflow: hidden;
+    margin-left: 40px;
+  }
+  
+  .slide {
+    width: 50%;
+    float: left;
+  }
+  
+  .slide img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  @media (max-width: 768px) {
+    .slide {
+      flex: 0 1 100%; /* Em telas menores, cada slide ocupa 100% da largura */
+    }
+  }
+
 @media (max-width: 480px) {
     #about p, #projects p {
         font-size: 1rem; /* Reduz o tamanho da fonte dos parágrafos */
